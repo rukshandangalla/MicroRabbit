@@ -3,9 +3,10 @@ using MicroRabbit.Banking.Application.Models;
 using MicroRabbit.Banking.Domain.Commands;
 using MicroRabbit.Banking.Domain.Interfaces;
 using MicroRabbit.Banking.Domain.Models;
+using MicroRabbit.Domain.Core.Bus;
 using System;
 using System.Collections.Generic;
-using MicroRabbit.Domain.Core.Bus;
+using System.Text;
 
 namespace MicroRabbit.Banking.Application.Services
 {
@@ -28,9 +29,9 @@ namespace MicroRabbit.Banking.Application.Services
         public void Transfer(AccountTransfer accountTransfer)
         {
             var createTransferCommand = new CreateTransferCommand(
-                accountTransfer.FromAccount, 
-                accountTransfer.ToAccount, 
-                accountTransfer.TransferAmount
+                    accountTransfer.FromAccount,
+                    accountTransfer.ToAccount,
+                    accountTransfer.TransferAmount
                 );
 
             _bus.SendCommand(createTransferCommand);

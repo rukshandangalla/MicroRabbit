@@ -14,7 +14,7 @@ namespace MicroRabbit.Transfer.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.5")
+                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -22,17 +22,13 @@ namespace MicroRabbit.Transfer.Data.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("FromAccount")
-                        .HasColumnType("int");
+                    b.Property<int>("FromAccount");
 
-                    b.Property<int>("ToAccount")
-                        .HasColumnType("int");
+                    b.Property<int>("ToAccount");
 
-                    b.Property<decimal>("TransferAmount")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<decimal>("TransferAmount");
 
                     b.HasKey("Id");
 
